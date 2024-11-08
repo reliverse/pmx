@@ -1,0 +1,81 @@
+{
+  "name": "@reliverse/pmx",
+  "version": "0.1.0",
+  "description": "A versatile package manager that wraps around bun, pnpm, yarn, and npm. This global installation tool detects your preferred package manager and installs packages accordingly.",
+  "scripts": {
+    "appts": "bun typecheck && bun lint && bun format",
+    "build": "unbuild && bun build.paths.ts",
+    "pub": "bun run build && bun publish",
+    "pub:bump": "bumpp && bun pub",
+    "format": "biome check --write .",
+    "lint": "eslint --cache --fix .",
+    "dev": "tsx src/commands/pi.ts",
+    "pr": "tsx src/commands/pr.ts",
+    "vi": "bun vitest",
+    "knip": "knip"
+  },
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blefnk/reliverse.git"
+  },
+  "module": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "bin": {
+    "pi": "dist/commands/pi.js",
+    "pci": "dist/commands/pci.js",
+    "pr": "dist/commands/pr.js",
+    "pu": "dist/commands/pu.js",
+    "plx": "dist/commands/plx.js",
+    "pa": "dist/commands/pa.js",
+    "pun": "dist/commands/pun.js"
+  },
+  "bugs": {
+    "url": "https://github.com/blefnk/reliverse/issues",
+    "email": "blefnk@gmail.com"
+  },
+  "files": ["package.json", "README.md", "LICENSE.md", "dist"],
+  "homepage": "https://github.com/blefnk/reliverse",
+  "keywords": ["cli", "reliverse"],
+  "license": "MIT",
+  "dependencies": {
+    "@posva/prompts": "^2.4.4",
+    "@reliverse/cutexe": "^0.2.0",
+    "@reliverse/pm": "^0.2.0",
+    "fs-extra": "^11.2.0",
+    "pathe": "^1.1.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@eslint/js": "^9.14.0",
+    "@types/bun": "^1.1.13",
+    "@types/eslint__js": "^8.42.3",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.9.0",
+    "eslint": "^9.14.0",
+    "eslint-plugin-perfectionist": "^3.9.1",
+    "knip": "^5.36.3",
+    "taze": "^0.18.0",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.13.0",
+    "unbuild": "^2.0.0",
+    "vitest": "^2.1.4",
+    "@types/ini": "^4.1.1",
+    "@types/which": "^3.0.4",
+    "bumpp": "^9.8.1",
+    "fzf": "^0.5.2",
+    "ini": "^5.0.0",
+    "lint-staged": "^15.2.10",
+    "picocolors": "^1.1.1",
+    "simple-git-hooks": "^2.11.1",
+    "terminal-link": "^3.0.0",
+    "tinyglobby": "^0.2.10",
+    "tsx": "^4.19.2",
+    "which": "^5.0.0"
+  }
+}
